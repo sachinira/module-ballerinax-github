@@ -182,7 +182,16 @@ final string ISSUE_FIELDS = Author +
                                             "              title,\n" +
                                             "              updatedAt,\n" +
                                             "              url,\n" +
-                                            "              viewerDidAuthor,\n";
+                                            "              viewerDidAuthor,\n" +
+                                            "              labels (first: $perPageCount) {\n" +
+                                            "                 nodes{\n" +
+                                                                LABEL_FIELDS +
+                                            "                \n}," +
+                                            "                 pageInfo{\n" +
+                                            "                     startCursor,endCursor, hasNextPage, hasPreviousPage\n" +
+                                            "                 }\n" +
+                                            "                 totalCount\n"+
+                                            "              }";
 
 final string ISSUE_COMMENT_FIELDS = Author +
                                             "              body,\n" +
